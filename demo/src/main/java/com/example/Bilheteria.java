@@ -5,25 +5,25 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
-public class Fila {
-    private Queue<Pessoa> clientes;
+public class Bilheteria {
+    private Queue<Pessoa> fila;
     private ArrayList<Sessao> sessoes;
 
-    public Fila(){
-        this.clientes = new LinkedList<Pessoa>();
+    public Bilheteria(){
+        this.fila = new LinkedList<Pessoa>();
         this.sessoes = new ArrayList<Sessao>();
     }
 
     public void addCliente(Pessoa cliente){
-        this.clientes.add(cliente);
+        this.fila.add(cliente);
     }
 
     public void addSessao(Sessao sessao){
         this.sessoes.add(sessao);
     }
 
-    public Queue<Pessoa> getClientes() {
-        return clientes;
+    public Queue<Pessoa> getFila() {
+        return fila;
     }
 
     public ArrayList<Sessao> getSessoes() {
