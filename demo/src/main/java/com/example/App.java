@@ -11,6 +11,7 @@ public final class App {
         int qtdPessoas, qtdSessoes, qtdBilheterias;
         Queue<Pessoa> fila = new LinkedList<Pessoa>();
         LinkedList<Sessao> sessoes = new LinkedList<Sessao>();
+        LinkedList<Bilheteria> bilheterias = new LinkedList<Bilheteria>();
 
         System.out.println("Informe a quantidade de clientes que você deseja criar: ");
         qtdPessoas = input.nextInt();
@@ -36,5 +37,18 @@ public final class App {
             Sessao sessao = new Sessao(nomeFilme, vagas, duracao);
             sessoes.add(sessao);
         }
+
+        for(int i = 0; i <= qtdBilheterias; i++){
+            Bilheteria bilheteria = new Bilheteria(i);
+            bilheteria.setFila(fila);
+            bilheteria.setSessoes(sessoes);
+            bilheterias.add(bilheteria);
+        }
+
+        Cinema cinema = new Cinema(fila, sessoes, bilheterias);
+        cinema.abrirCinema();
+
+        System.out.println("Todos os clientes assistiram todos os filmes! Fim do programa.");
+
     }
 }
